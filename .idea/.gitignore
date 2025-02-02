@@ -1,0 +1,10 @@
+# Default ignored files
+.idea/replstate.xml  # Не отслеживать replstate.xml в папке .idea
+temp/                 # Не отслеживать папку temp
+.idea/**/dataSources/ # Не отслеживать папку dataSources в папке .idea/**
+*.zip                 # Не отслеживать файлы с расширением zip
+*.class               # Не отслеживать скомпилированные файлы Java
+target/               # Не отслеживать папку target, где Maven хранит скомпилированные артефакты
+
+/shelf/
+/workspace.xml
