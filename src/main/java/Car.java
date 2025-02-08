@@ -1,5 +1,3 @@
-import java.util.List;
-
 public abstract class Car {
     private String model;           // Название модели
     private int year;               // Год выпуска
@@ -26,32 +24,29 @@ public abstract class Car {
                 ", цена: " + price + "$" +
                 ", класс автомобиля: " + carClass;
     }
+
     // Метод для вывода информации об автомобилях, выпущенных после 2006 года
-    public static void printCarInfoAfter2006(List<Car> cars) {
-        for (Car car : cars) {
-            if (car.getYear() > 2006) {
-                System.out.println(car.getCarInfo());
-            } else {
-                System.out.println("Устаревший авто: " + car.getCarInfo());
-            }
+    public static void printCarInfoAfter2006(Car cars) {
+        Car car = cars;
+        if (car.getYear() > 2006) {
+            System.out.println(car.getCarInfo());
+        } else {
+            System.out.println("Устаревший авто: " + car.getCarInfo());
         }
     }
 
     // Метод для изменения цвета авто на красный, если он зеленый
-    public static void changeGreenCarsToRed(List<Car> cars) {
-        for (Car car : cars) {
-            if (car.getColor().equalsIgnoreCase("Зеленый")) {
-                car.changeColor("Красный");
-            }
+    public static void changeGreenCarsToRed(Car cars) {
+        Car car = cars;
+        if (car.getColor().equalsIgnoreCase("Зеленый")) {
+            car.changeColor("Красный");
         }
     }
 
     // Метод для вывода информации о классе автомобиля
-    public static void printCarClasses(List<Car> cars) {
-        System.out.println("\nКлассы автомобилей:");
-        for (Car car : cars) {
-            System.out.println(car.getCarClass());
-        }
+    public static void printCarClasses(Car cars) {
+        Car car = cars;
+        System.out.println("Класс автомобиля: " + cars.getCarClass() + "\n");
     }
 
     // Метод для изменения цвета автомобиля
@@ -82,31 +77,31 @@ public abstract class Car {
 
 // Классы автомобилей
 class Suzuki extends Car {
-    public Suzuki(int year, String color, int price, String carClass) {
-        super("Suzuki", year, color, "Механика", price, carClass);
+    public Suzuki(int year, String color, String transmission, int price, String carClass) {
+        super("Suzuki", year, color, transmission, price, carClass);
     }
 }
 
 class Toyota extends Car {
-    public Toyota(int year, String color, int price, String carClass) {
-        super("Toyota", year, color, "Автоматическая", price, carClass);
+    public Toyota(int year, String color, String transmission, int price, String carClass) {
+        super("Toyota", year, color, transmission, price, carClass);
     }
 }
 
 class Honda extends Car {
-    public Honda(int year, String color, int price, String carClass) {
-        super("Honda", year, color, "Автоматическая", price, carClass);
+    public Honda(int year, String color, String transmission, int price, String carClass) {
+        super("Honda", year, color, transmission, price, carClass);
     }
 }
 
 class Ford extends Car {
-    public Ford(int year, String color, int price, String carClass) {
-        super("Ford", year, color, "Механическая", price, carClass);
+    public Ford(int year, String color, String transmission, int price, String carClass) {
+        super("Ford", year, color, transmission, price, carClass);
     }
 }
 
 class BMW extends Car {
-    public BMW(int year, String color, int price, String carClass) {
-        super("BMW", year, color, "Автоматическая", price, carClass);
+    public BMW(int year, String color, String transmission, int price, String carClass) {
+        super("BMW", year, color, transmission , price, carClass);
     }
 }
